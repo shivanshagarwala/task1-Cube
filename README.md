@@ -1,3 +1,16 @@
+`npm install` to install node modules
+`npm start` to start app
+<!-- I used the Unsplash API to get images, but because making many API calls was causing limit issues, I started caching 30 photos in local storage and shuffling and displaying them repeatedly.
+-->
+
+![SS Image](./ss-image.png)
+
+
+
+
+
+
+<!-- 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -43,4 +56,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/). -->

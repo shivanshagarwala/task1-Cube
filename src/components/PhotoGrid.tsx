@@ -22,7 +22,7 @@ const PhotoGrid: React.FC<Props> = ({ selectedCustomerId }) => {
                     setVisiblePhotos(parsedPhotos.slice(0, 9)); // Initially show the first 9 photos
                 } else {
                     const response = await axios.get(
-                        `https://api.unsplash.com/photos/random?count=300&client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`
+                        `https://api.unsplash.com/photos/random?count=30&client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`
                     );
                     const newPhotos = response.data.map((photo: any) => ({
                         id: photo.id,
