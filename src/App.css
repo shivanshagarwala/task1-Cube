@@ -1,38 +1,117 @@
-.App {
+/* App.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.heading-container {
+  flex-shrink: 0;
+  padding: 10px 0;
+}
+
+.main-content {
+  display: flex;
+  flex-grow: 1; /* Allows main content to take up the remaining space */
+  height: calc(100% - 60px); /* Adjust this value if necessary to accommodate the height of your heading */
+}
+
+.customer-list {
+  width: 30%;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+  background-color: #f0f0f0;
+}
+
+.customer-card {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+  text-align: left;
+}
+
+.customer-card:hover {
+  background-color: #e0e0e0;
+}
+
+.customer-card.selected {
+  background-color: #e0e0e0;
+  border-right: 4px solid #007bff;
+}
+
+.customer-details {
+  width: 70%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.customer-details h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.customer-details h6 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.customer-details p {
+  margin-bottom: 30px;
+}
+
+.photo-grid-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; /* Consistent gap between images both horizontally and vertically */
+  justify-items: center; /* Center images in the grid */
+  justify-content: center; /* Center the grid in the container */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.photo-item img {
+  width: 150px;
+  height: 150px;
+
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.photo-item img:hover {
+  transform: scale(1.05);
+}
+
+/* For better responsiveness */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .customer-list, .customer-details {
+    width: 100%;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
